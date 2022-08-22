@@ -1,5 +1,6 @@
 package com.invader;
 
+import java.io.IOException;
 import java.util.List;
 
 public class Screen {
@@ -43,6 +44,14 @@ public class Screen {
 //				field[invader.getPositionY()][invader.getPositionX()] = invaderCharacter;
 //			}
 //		}
+		
+//		codes to clear the screen
+		try {
+			new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+		} catch (InterruptedException | IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		for(int y = 0; y < SCREEN_HEIGHT; y++) {
 			for(int x = 0; x < SCREEN_WIDTH; x++) {
