@@ -18,4 +18,14 @@ public class VEC2 {
 		return y;
 	}
 
+	public void setX(int x) {
+		this.x = x;
+	}
+
+	public void setY(int y) {
+		this.y = y;
+	}
+	
+	
+
 }
