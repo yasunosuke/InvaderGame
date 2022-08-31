@@ -1,26 +1,37 @@
 package com.invader;
 
-public class Invader {
-	private final String character = "Åö";
-	private int positionX;
-	private int positionY;
+public class Invader extends DrawnItem implements Shoot {
 	
-	public Invader(int positionX, int positionY) {
-		super();
-		this.positionX = positionX;
-		this.positionY = positionY;
+	private boolean isDead = false;
+	private Bullet bullet = new Bullet("Å´", 0, 0);
+	
+	public Invader(String character, int x, int y) {
+		super(character, x, y);
 	}
 
-	public int getPositionX() {
-		return positionX;
+	public boolean isDead() {
+		return isDead;
 	}
 
-	public int getPositionY() {
-		return positionY;
+	public void setDead(boolean isDead) {
+		this.isDead = isDead;
 	}
 
-	public String getCharacter() {
-		return character;
+	public Bullet getBullet() {
+		return bullet;
+	}
+
+	@Override
+	public void shoot() {
+		bullet.setFired(true);
+		bullet.setX(super.getX());
+		bullet.setY(super.getY() + 1);
+		
+	}
+	
+	public void move(int directionX, int directionY) {
+		super.setX(super.getX() + directionX);
+		super.setY(super.getY() + directionY);
 	}
 	
 	
