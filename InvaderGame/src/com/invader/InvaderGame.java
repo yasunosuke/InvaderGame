@@ -48,21 +48,21 @@ public class InvaderGame {
 				screen.updateInvaderBullets();
 				
 //				‘S‚Ä‚ÌInvader‚ªÁ‚³‚ê‚½‚©‚Ç‚¤‚©‚Ì”»’è
-//				‚±‚Ìˆ—‚ÌêŠ‚ª‚Ü‚¾•s–¾Šm
 				if(screen.isGameCleared()) {
+					screen.draw();
 					System.out.println("Congrats");
 					System.out.println("Game Clear");
 					sc.nextLine();
 					break;
 				}
-
-//				Bullet‚ğ‚»‚ê‚¼‚ê•ú‚Â
-				screen.shootPlayerBullet();
-				screen.shootInvaderBulletsRandomly();
 				
 //				Player‚ÆInvader‚ğ“®‚©‚·			
 				screen.movePlayer();
 				screen.moveInvaders();
+
+//				Bullet‚ğ‚»‚ê‚¼‚ê•ú‚Â
+				screen.shootPlayerBullet();
+				screen.shootInvaderBulletsRandomly();
 			}
 		}
 	}
